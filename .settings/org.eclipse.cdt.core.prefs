@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+environment/project/cdt.managedbuild.config.gnu.cygwin.exe.debug.1463526063/PATH/delimiter=;
+environment/project/cdt.managedbuild.config.gnu.cygwin.exe.debug.1463526063/PATH/operation=replace
+environment/project/cdt.managedbuild.config.gnu.cygwin.exe.debug.1463526063/PATH/value=C\:/Program Files/Java/jdk1.7.0_51/bin/../jre/bin/server;C\:/Program Files/Java/jdk1.7.0_51/bin/../jre/bin;C\:/Program Files/Java/jdk1.7.0_51/bin/../jre/lib/amd64;C\:\\ASF\\apache-ant-1.9.3\\bin;C\:\\cygwin64\\usr\\local\\bin;C\:\\cygwin64\\bin;C\:\\Python33;C\:\\Windows\\system32;C\:\\Windows;C\:\\Windows\\System32\\Wbem;C\:\\Windows\\System32\\WindowsPowerShell\\v1.0;C\:\\Program Files\\Mercurial;C\:\\Program Files (x86)\\CMake 2.8\\bin;C\:\\Program Files\\Microsoft\\Web Platform Installer;C\:\\Program Files (x86)\\Microsoft ASP.NET\\ASP.NET Web Pages\\v1.0;C\:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn;C\:\\Program Files (x86)\\Subversion\\bin;C\:\\Program Files\\Java\\jdk1.7.0_51\\bin;C\:\\ASF\\apache-ant-1.9.3\\bin;C\:\\cygwin64\\usr\\local\\include
+environment/project/cdt.managedbuild.config.gnu.cygwin.exe.debug.1463526063/append=true
+environment/project/cdt.managedbuild.config.gnu.cygwin.exe.debug.1463526063/appendContributed=true

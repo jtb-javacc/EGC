@@ -1,3 +1,6 @@
+.gradle
+EG1/gen/
+
 # Compiled Object files
 *.slo
 *.lo

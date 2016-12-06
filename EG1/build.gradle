@@ -1,0 +1,37 @@
+plugins { id "ca.coglinc.javacc" version "2.4.0" }
+
+apply plugin: 'ca.coglinc.javacc'
+apply plugin: 'cpp'
+
+version='7.0.0'
+
+repositories {
+	flatDir {
+		name "fileRepo"
+		dirs "repo"
+	}
+
+	mavenCentral()
+    dependencies {
+		javacc 'net.java.dev.javacc:javacc:7.0.0'
+    }
+}
+uploadArchives {
+	repositories {
+		add project.repositories.fileRepo
+	}
+}
+jar {
+	manifest {
+		attributes("Implementation-Title": project.name,
+				   "Implementation-Version": version)
+	}
+}
+artifacts {
+	
+}
+compileJjtree {
+    inputDirectory = projectDir
+    outputDirectory = new File(projectDir, 'generated/jjtree')
+//    arguments = [grammar_encoding: 'UTF-8', static: 'false']
+}
