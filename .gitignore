@@ -1,6 +1,7 @@
 .gradle
 Debug/
-EG1/gen/
+**/generated/
+
 
 # Compiled Object files
 *.slo
