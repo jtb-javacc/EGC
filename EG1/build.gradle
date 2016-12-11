@@ -49,3 +49,25 @@ compileJavacc {
 	outputDirectory = new File(projectDir, 'generated/javacc')
 //    arguments = [grammar_encoding: 'UTF-8', static: 'false']
 }
+model {
+    components {
+        EG1(NativeExecutableSpec) {
+		sources {
+		    cpp {
+		        source {
+		            srcDir compileJavacc.outputDirectory
+					include "**/*.cc"
+		        }
+		        source {
+					srcDir compileJjtree.outputDirectory
+					include "**/*.cc"
+		        }
+				exportedHeaders {
+					srcDir compileJjtree.outputDirectory
+		            srcDir compileJavacc.outputDirectory
+				}
+		    }
+		}
+        }
+    }
+}
