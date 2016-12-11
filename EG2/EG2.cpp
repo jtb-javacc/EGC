@@ -3,33 +3,40 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
-
-#include "gen/JavaCC.h"
-#include "gen/ParseException.h"
 #include "gen/Parser.h"
+#include "gen/ParserTokenManager.h"
+#include "gen/ParseException.h"
+#include "gen/ParserTree.h"
 
 using namespace std;
-using namespace EG1;
+using namespace EG2;
 
 JAVACC_STRING_TYPE ReadFileFully(char *file_name) {
-	return "(1 + 2) * (a + b);\n";
+//	JAVACC_STRING_TYPE s;
+//#if WIDE_CHAR
+//	wifstream in;
+//#else
+//	ifstream in;
+//#endif
+//	in.open(file_name, ios::in);
+//	// Very inefficient.
+//	while (!in.eof()) {
+//		s += in.get();
+//	}
+	return "1 + 2 * (a + b);\n";//s;
 }
 
 int main(int argc, char** argv) {
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
-	cout << "Reading from standard input..." << endl;
 	JAVACC_STRING_TYPE s = ReadFileFully(argv[1]);
 	try {
-		CharStream *stream = new CharStream(s.c_str(), s.size() - 1, 1, 1);
-		ParserTokenManager *scanner = new ParserTokenManager(stream);
-		Parser parser(scanner);
-//		parser.setErrorHandler(new MyErrorHandler());
-		SimpleNode* n = parser.Start();
-//		parser.jjtree.peekNode();
-		n->dump("");
-//		DumpVisitor eg4dv;
-//		eg4dv.visit(n, NULL);
-		cout << "thank you." << endl;
+	CharStream *stream = new CharStream(s.c_str(), s.size() - 1, 1, 1);
+	ParserTokenManager *scanner = new ParserTokenManager(stream);
+	Parser parser(scanner);
+//	parser.setErrorHandler(new MyErrorHandler());
+	ASTStart* n = parser.Start();
+//	parser.jjtree.peekNode();
+	n->dump("");
+	cout << "thank you." << endl;
 	} catch (const ParseException& e) {
 
 	}
