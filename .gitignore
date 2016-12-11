@@ -2,7 +2,8 @@
 Debug/
 **/generated/
 **/gen/
-
+*.*~
+build/
 
 # Compiled Object files
 *.slo
