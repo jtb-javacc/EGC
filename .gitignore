@@ -1,6 +1,7 @@
 .gradle
 Debug/
 **/generated/
+**/gen/
 
 
 # Compiled Object files

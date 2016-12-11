@@ -1,0 +1,47 @@
+plugins { id "ca.coglinc.javacc" version "2.4.0" }
+
+apply plugin: 'ca.coglinc.javacc'
+apply plugin: 'cpp'
+
+repositories {
+	mavenLocal()
+	maven {
+		url "https://oss.sonatype.org/content/repositories/netjavadevjavacc-1000/"
+	}
+	mavenCentral()
+	
+    dependencies {
+		javacc 'net.java.dev.javacc:javacc:7.0.0'
+    }
+}
+compileJjtree {
+    inputDirectory  = projectDir
+    outputDirectory = new File(projectDir, 'gen')
+//    arguments = [grammar_encoding: 'UTF-8', static: 'false']
+}
+compileJavacc {
+	inputDirectory  = new File(projectDir, 'gen')
+	outputDirectory = new File(projectDir, 'gen')
+//    arguments = [grammar_encoding: 'UTF-8', static: 'false']
+}
+model {
+    components {
+        EG4(NativeExecutableSpec) {
+		sources {
+		    cpp {
+		        source {
+		            srcDir projectDir
+					include "*.cpp"
+		        }
+		        source {
+		            srcDir compileJavacc.outputDirectory
+					include "**/*.cc"
+		        }
+				exportedHeaders {
+		            srcDir compileJavacc.outputDirectory
+				}
+		    }
+		}
+        }
+    }
+}
