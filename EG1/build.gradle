@@ -27,21 +27,21 @@ compileJavacc {
 model {
     components {
         EG1(NativeExecutableSpec) {
-		sources {
-		    cpp {
-		        source {
-		            srcDir projectDir
-					include "*.cpp"
-		        }
-		        source {
-		            srcDir compileJavacc.outputDirectory
-					include "**/*.cc"
-		        }
-				exportedHeaders {
-		            srcDir compileJavacc.outputDirectory
-				}
-		    }
-		}
+			sources {
+			    cpp {
+			        source {
+			            srcDir projectDir
+						include "*.cpp"
+			        }
+			        source {
+			            srcDir compileJavacc.outputDirectory
+						include "**/*.cc"
+			        }
+					exportedHeaders {
+			            srcDir compileJavacc.outputDirectory
+					}
+			    }
+			}
         }
     }
 }
