@@ -3,10 +3,11 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
-#include "Parser.h"
-#include "EG4DumpVisitor.h"
-#include "ParseException.h"
-#include "MyErrorHandler.h"
+#include "gen/Parser.h"
+#include "gen/EG4DumpVisitor.h"
+#include "gen/ParseException.h"
+#include "gen/MyErrorHandler.h"
+#include "gen/ParserTokenManager.h"
 
 using namespace std;
 using namespace EG4;

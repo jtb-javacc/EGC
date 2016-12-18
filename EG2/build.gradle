@@ -1,15 +1,18 @@
 compileJjtree {
+	language 'Cpp'
+    include '*.cc'
+    include '*.h'
     inputDirectory  = projectDir
     outputDirectory = new File(projectDir, 'gen')
 //    arguments = [grammar_encoding: 'UTF-8', static: 'false']
 }
 compileJavacc {
-	inputDirectory  = new File(projectDir, 'gen')
-	outputDirectory = new File(projectDir, 'gen')
-//    arguments = [grammar_encoding: 'UTF-8', static: 'false']
+	inputDirectory 	compileJjtree.outputDirectory
+	outputDirectory	compileJjtree.outputDirectory
 }
+
 model {
-    components {
+    components { 
         EG2(NativeExecutableSpec) {
 			sources {
 			    cpp {
@@ -18,11 +21,11 @@ model {
 						include "*.cpp"
 			        }
 			        source {
-			            srcDir compileJavacc.outputDirectory
-						include "**/*.cc"
+			            srcDir compileJjtree.outputDirectory
+						include "*.cc"
 			        }
 					exportedHeaders {
-			            srcDir compileJavacc.outputDirectory
+			            srcDir compileJjtree.outputDirectory
 					}
 			    }
 			}
