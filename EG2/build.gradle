@@ -15,19 +15,22 @@ model {
     components { 
         EG2(NativeExecutableSpec) {
 			sources {
-			    cpp {
-			        source {
-			            srcDir projectDir
-						include "*.cpp"
-			        }
-			        source {
-			            srcDir compileJjtree.outputDirectory
+				generated(CppSourceSet) {
+					source {
+						srcDir compileJjtree.outputDirectory
 						include "*.cc"
-			        }
-					exportedHeaders {
-			            srcDir compileJjtree.outputDirectory
 					}
-			    }
+					exportedHeaders {
+						srcDir compileJjtree.outputDirectory
+					}
+			   }
+			   cpp {
+					source {
+						srcDir projectDir
+						include "*.cpp"
+					}
+					lib sources.generated
+				}
 			}
         }
     }

@@ -7,27 +7,30 @@ compileJjtree {
 //    arguments = [grammar_encoding: 'UTF-8', static: 'false']
 }
 compileJavacc {
-	inputDirectory  = new File(projectDir, 'gen')
-	outputDirectory = new File(projectDir, 'gen')
-//    arguments = [grammar_encoding: 'UTF-8', static: 'false']
+	inputDirectory 	compileJjtree.outputDirectory
+	outputDirectory	compileJjtree.outputDirectory
 }
+
 model {
-    components {
+    components { 
         EG3(NativeExecutableSpec) {
 			sources {
-			    cpp {
-			        source {
-			            srcDir projectDir
-						include "*.cpp"
-			        }
-			        source {
-			            srcDir compileJavacc.outputDirectory
+				generated(CppSourceSet) {
+					source {
+						srcDir compileJjtree.outputDirectory
 						include "*.cc"
-			        }
-					exportedHeaders {
-			            srcDir compileJavacc.outputDirectory
 					}
-			    }
+					exportedHeaders {
+						srcDir compileJjtree.outputDirectory
+					}
+			   }
+			   cpp {
+					source {
+						srcDir projectDir
+						include "*.cpp"
+					}
+					lib sources.generated
+				}
 			}
         }
     }
