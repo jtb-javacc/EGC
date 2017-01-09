@@ -17,6 +17,7 @@ subprojects {
 	apply plugin: 'cpp'
 	
 	repositories {
+		mavenLocal()
 		mavenCentral()
 		
 	    dependencies {

@@ -7,8 +7,8 @@
 
 #ifndef ASTMYOTHERID_H_
 #define ASTMYOTHERID_H_
-#include "ParserTree.h"
 #include "EG4Visitors.h"
+#include "ParserTree.h"
 #include "SimpleNode.h"
 
 namespace EG4 {

@@ -2,7 +2,7 @@ compileJjtree {
 	language 'Cpp'
     include '*.cc'
     include '*.h'
-    inputDirectory  = projectDir
+    inputDirectory  = new File(projectDir, 'jjt')
     outputDirectory = new File(projectDir, 'gen')
 //    arguments = [grammar_encoding: 'UTF-8', static: 'false']
 }
@@ -22,12 +22,14 @@ model {
 					}
 					exportedHeaders {
 						srcDir compileJjtree.outputDirectory
+						srcDir compileJjtree.inputDirectory
 					}
 			   }
 			   cpp {
 					source {
-						srcDir projectDir
+						srcDir new File(projectDir, 'jjt')
 						include "*.cpp"
+						include "*.cc"
 					}
 					lib sources.generated
 				}

@@ -3,13 +3,13 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
-#include "gen/Parser.h"
-#include "gen/ParserTokenManager.h"
-#include "gen/ParseException.h"
-#include "gen/ParserTree.h"
+#include "Parser.h"
+#include "ParserTokenManager.h"
+#include "ParseException.h"
+#include "ParserTree.h"
 
 using namespace std;
-using namespace EG3;
+using namespace EG2;
 
 JAVACC_STRING_TYPE ReadFileFully(char *file_name) {
 //	JAVACC_STRING_TYPE s;

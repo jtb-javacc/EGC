@@ -7,7 +7,7 @@
 
 #ifndef EG4VISITORS_H_
 #define EG4VISITORS_H_
-#include <ConstVisitor.h>
+#include "ConstVisitor.h"
 
 namespace EG4 {
 class ASTMyOtherID;
