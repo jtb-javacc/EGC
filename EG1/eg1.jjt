@@ -34,26 +34,6 @@ options
 }
 
 PARSER_BEGIN(Parser)
-//package EG1;
-//
-///** An Arithmetic Grammar. */
-//public class EG1 {
-//
-//  /** Main entry point. */
-//  public static void main(String args[]) {
-//    System.out.println("Reading from standard input...");
-//    EG1 t = new EG1(System.in);
-//    try {
-//      SimpleNode n = t.Start();
-//      n.dump("");
-//      System.out.println("Thank you.");
-//    } catch (Exception e) {
-//      System.out.println("Oops.");
-//      System.out.println(e.getMessage());
-//      e.printStackTrace();
-//    }
-//  }
-//}
 
 PARSER_END(Parser)
 
