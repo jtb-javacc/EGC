@@ -40,7 +40,7 @@ public:
 
 private:
 	int indent;
-	JAVACC_SIMPLE_STRING indentString() const;
+	JJSimpleString indentString() const;
 public:
 	void* visit(const SimpleNode *node, void * data);
 	void* visit(const ASTStart *node, void * data);

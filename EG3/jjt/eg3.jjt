@@ -36,8 +36,6 @@ options {
 }
 
 PARSER_BEGIN(Parser)
-//package EG3;/////** An Arithmetic Grammar. *///public class Eg3 {//  /** Main entry point. *///  public static void main(String args[]) {//    System.out.println("Reading from standard input...");//    Eg3 t = new Eg3(System.in);//    try {//      ASTStart n = t.Start();//      n.dump("");//      System.out.println("Thank you.");//    } catch (Exception e) {//      System.out.println("Oops.");//      System.out.println(e.getMessage());//      e.printStackTrace();//    }//  }//}
-
 PARSER_END(Parser)
 
 
